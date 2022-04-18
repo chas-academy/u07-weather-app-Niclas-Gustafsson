@@ -11,6 +11,8 @@
         font-family: $robo;
         background: $box-gradient;
         border-radius: 1em;
+        box-shadow: $box-shadow;
+        
     .search-form {
         display: flex;
         flex-direction: column;

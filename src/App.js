@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Navbar from './components/navbar/navbar';
 import Search from './components/searchComponent/search'
 import ForecastDay from './components/forecast-day/ForecastDay'
+import ForecastWeek from './components/forecast-day/forecastWeek';
 
 function App() {
 
@@ -21,8 +22,10 @@ function App() {
         <h1 className="heading">WeapApp</h1>
         {/* Sidebar - visibly hidden on init */}
         <Search />
-        {/* daily data */}
+        {/* Forecast day */}
         <ForecastDay />
+        {/* Forecast week */}
+        <ForecastWeek />
         {/* table button */}
         {/* forcast table with collapsable daily timelapses */}
       </section>
