@@ -1,18 +1,56 @@
 .search-box {
-    width: 80%;
-    height: 200px; // refactor to relative
-    background-color: #fff;
-    margin: 0 auto;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 37.5em;
+        height: 200px; // refactor to relative
+        // background-color: #fff;
+        margin: 0 auto;
+        font-family: $robo;
+        background: $box-gradient;
+        border-radius: 1em;
     .search-form {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        input, label {
+        padding: 1em;
+        width: 80%;
+        // max-width: 30em;
+        /* input, label {
             display: block;
+            margin: 0.5em;
+
+        } */
+       
+        input {
+            // display: block;
+            width: 100%;
+            max-width: 22em;
+            height: 2.5em;
+            border-radius: 1.25em;
+            border: none;
+            padding-left: 1em;
+            margin-bottom: 1em;
+            font-size: 1rem;
+
         }
         button {
+            width:100%;
+            max-width: 20em;
+            height:2.5em;
+            border-radius: 1.25em;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            background: $btn-gradient;
+            color: $white;
 
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

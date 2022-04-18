@@ -52,12 +52,64 @@ input {
 body {
   width: 100%;
   height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+}
+
+body::before {
+  content: '';
+  background: url("/src/assets/images/lake.jpg") no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 body #root .container {
   max-width: 37.5em;
   margin: 0 auto;
-  background-color: #c8c8c8;
+  background-color: rgba(200, 200, 200, 0.376);
+}
+
+body #root .container .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #root .container .inner .heading {
+  font-size: 2.5em;
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  margin: 1em;
 }
 
 .nav {
@@ -65,7 +117,6 @@ body #root .container {
   max-width: 600px;
   margin: 0 auto;
   height: 3rem;
-  background-color: #343434;
 }
 
 .nav .hamburger {
@@ -125,10 +176,26 @@ body #root .container {
 }
 
 .search-box {
-  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  max-width: 37.5em;
   height: 200px;
-  background-color: #fff;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.77);
+  border-radius: 1em;
 }
 
 .search-box .search-form {
@@ -145,9 +212,39 @@ body #root .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1em;
+  width: 80%;
+  /* input, label {
+            display: block;
+            margin: 0.5em;
+
+        } */
 }
 
-.search-box .search-form input, .search-box .search-form label {
-  display: block;
+.search-box .search-form input {
+  width: 100%;
+  max-width: 22em;
+  height: 2.5em;
+  border-radius: 1.25em;
+  border: none;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+
+.search-box .search-form button {
+  width: 100%;
+  max-width: 20em;
+  height: 2.5em;
+  border-radius: 1.25em;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background: linear-gradient(285.12deg, rgba(101, 25, 160, 0.486) 16.13%, rgba(27, 200, 255, 0.6) 85.33%), #1BD6FF;
+  color: #ffffff;
+}
+
+.search-box .search-form button:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
