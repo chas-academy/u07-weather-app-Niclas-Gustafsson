@@ -1,0 +1,59 @@
+.nav {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 3rem;
+    background-color: #343434;
+
+   
+    .hamburger {
+        position:absolute;
+        right: 1rem;
+        top: 1.5rem;
+        width: 30px;
+        height: 20px;
+
+        &__lines {
+           position: absolute;
+            height: 2px;
+            width: 28px;
+            background-color: #fff;
+            
+
+            &::before {
+                content: "";
+                        position: absolute;
+                        top: -8px;
+                        width: 28px;
+                        height: 2px;
+                        background-color: #ffffff;
+                        transition: 0.2s ease-in-out;
+
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 8px;
+                width: 24px;
+                height: 2px;
+                background-color: #ffffff;
+                transition: 0.2s ease-in-out;
+            }
+            &.open {
+                background: transparent;
+    
+                &::before {
+                    transform: rotate(45deg) translate(5px, 9px);
+                }
+                &::after {
+                    width: 28px;
+                    transform: rotate(-45deg) translate(2px, -7px);
+                }
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
