@@ -1,0 +1,26 @@
+.forecast-week {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    width: 90%;
+    border-radius: 1em;
+    box-shadow: $box-shadow;
+    color: $white;
+    font-family: $robo;
+
+    .days {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        img {
+            margin: 0 auto;
+        }
+        p {
+            text-align: center;
+        }
+
+        .week-day-temp {
+            font-size: 0.8rem;
+        }
+    }
+}

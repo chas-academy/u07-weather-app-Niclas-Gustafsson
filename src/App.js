@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Navbar from './components/navbar/navbar';
 import Search from './components/searchComponent/search'
 import ForecastDay from './components/forecast-day/ForecastDay'
-import ForecastWeek from './components/forecast-day/forecastWeek';
+import ForecastWeek from './components/forecast-week/forecastWeek';
 
 function App() {
 
