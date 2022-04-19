@@ -3,6 +3,7 @@ import Navbar from './components/navbar/navbar';
 import Search from './components/searchComponent/search'
 import ForecastDay from './components/forecast-day/ForecastDay'
 import ForecastWeek from './components/forecast-week/forecastWeek';
+import TableButton from './components/table-button/TableButton';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         {/* Forecast week */}
         <ForecastWeek />
         {/* table button */}
+        <TableButton />
         {/* forcast table with collapsable daily timelapses */}
       </section>
     </div>

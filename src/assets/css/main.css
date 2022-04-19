@@ -84,7 +84,6 @@ body::after {
 body #root .container {
   max-width: 37.5em;
   margin: 0 auto;
-  background-color: rgba(200, 200, 200, 0.376);
 }
 
 body #root .container .inner {
@@ -101,7 +100,7 @@ body #root .container .inner {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 1em;
+  gap: 0.6em;
 }
 
 body #root .container .inner .heading {
@@ -355,6 +354,7 @@ body #root .container .inner .heading {
           box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
   color: #ffffff;
   font-family: "Roboto", sans-serif;
+  background-color: rgba(200, 200, 200, 0.376);
 }
 
 .forecast-week .days {
@@ -378,5 +378,21 @@ body #root .container .inner .heading {
 
 .forecast-week .days .week-day-temp {
   font-size: 0.8rem;
+}
+
+.table-btn {
+  padding: 0.4rem 3em;
+  border-radius: 1em;
+  border: none;
+  -webkit-box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
+}
+
+.table-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 /*# sourceMappingURL=main.css.map */
