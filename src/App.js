@@ -5,33 +5,39 @@ import ForecastDay from './components/forecast-day/ForecastDay'
 import ForecastWeek from './components/forecast-week/forecastWeek';
 import TableButton from './components/table-button/TableButton';
 import Sidebar from './components/sidebar/Sidebar';
+//observables
+// import { weather$, getLocation } from './services/weatherService';
 
 function App() {
 
   const ref = useRef();
-  const [showSidebar, setShowSidebar] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(false);
+  /* const [weather, setWeather] = useState({});
 
-  const handleToggle = () => {
-    setShowSidebar((prevSidebarState) => !prevSidebarState);
-    // console.log(showSidebar);
-  }
   useEffect(() => {
+    getLocation();
+    weather$.subscribe(data => setWeather(data))
+  }, [])
+  console.log(weather); */
 
+  useEffect(() => {
     const closeSidebar = (e) => {
-
       if(showSidebar && ref.current && !ref.current.contains(e.target)) {
-
         setShowSidebar(false);
         // console.log(showSidebar);
       }
     }
     document.addEventListener("mousedown", closeSidebar)
-
     return () => {
       // Cleanup the event listener
       document.removeEventListener("mousedown", closeSidebar)
     }
   }, [showSidebar]);
+
+  const handleToggle = () => {
+    setShowSidebar((prevSidebarState) => !prevSidebarState);
+    // console.log(showSidebar);
+  }
 
   return (
     <div className="container">
