@@ -1,10 +1,18 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
+import {  map, filter } from 'rxjs/operators'; 
 //https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
 export const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
 
 export const weather$ = new BehaviorSubject({});
+
+export const locationOffset$ = weather$.pipe(map((res) => {
+    return res.timezone_offset;
+}))
+export const dailyWeather$ = weather$.pipe(map((res) => {
+     return res.daily;
+}));
 
 //Get location
 // gets called on mount

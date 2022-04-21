@@ -58,7 +58,7 @@ function App() {
         {/* Forecast week */}
         <ForecastWeek />
         {/* table button */}
-        <TableButton />
+        {/* <TableButton /> */}
         {/* forcast table with collapsable daily timelapses */}
       </section>
       {/* </div> */}

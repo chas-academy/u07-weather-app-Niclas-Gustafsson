@@ -11,7 +11,7 @@ export default function ForecastDay() {
     weather$.subscribe(data => setWeather(data))
   }, [])
 
-  console.log(weather);
+  // console.log(weather);
 
   const options = {
     time: {
