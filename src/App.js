@@ -5,6 +5,7 @@ import ForecastDay from './components/forecast-day/ForecastDay'
 import ForecastWeek from './components/forecast-week/forecastWeek';
 import TableButton from './components/table-button/TableButton';
 import Sidebar from './components/sidebar/Sidebar';
+import HourlyForecast from './components/hourly-forecast/HourlyForecast';
 //observables
 // import { weather$, getLocation } from './services/weatherService';
 
@@ -12,19 +13,14 @@ function App() {
 
   const ref = useRef();
   const [showSidebar, setShowSidebar] = useState(false);
-  /* const [weather, setWeather] = useState({});
-
-  useEffect(() => {
-    getLocation();
-    weather$.subscribe(data => setWeather(data))
-  }, [])
-  console.log(weather); */
+  const [hourlyForecast, setHourlyForecast] = useState(false);
 
   useEffect(() => {
     const closeSidebar = (e) => {
-      if(showSidebar && ref.current && !ref.current.contains(e.target)) {
-        setShowSidebar(false);
-        // console.log(showSidebar);
+      if(showSidebar || hourlyForecast && ref.current && !ref.current.contains(e.target)) {
+        // setShowSidebar(false);
+        // setHourlyForecast(false);
+        
       }
     }
     document.addEventListener("mousedown", closeSidebar)
@@ -32,11 +28,15 @@ function App() {
       // Cleanup the event listener
       document.removeEventListener("mousedown", closeSidebar)
     }
-  }, [showSidebar]);
+  }, [showSidebar, hourlyForecast]);
 
   const handleToggle = () => {
     setShowSidebar((prevSidebarState) => !prevSidebarState);
-    // console.log(showSidebar);
+    console.log(showSidebar);
+  }
+  const handleHourlyToggle = () => {
+    setHourlyForecast((prevHourlyForecastState) => !prevHourlyForecastState);
+    console.log(hourlyForecast);
   }
 
   return (
@@ -50,6 +50,7 @@ function App() {
         {/* Sidebar */}
         <div ref={ref}>
         <Sidebar show={showSidebar} /> 
+        <HourlyForecast show={hourlyForecast}/>
         </div>
 
         <Search />
@@ -58,7 +59,7 @@ function App() {
         {/* Forecast week */}
         <ForecastWeek />
         {/* table button */}
-        {/* <TableButton /> */}
+        <TableButton toggleHourly={handleHourlyToggle}/>
         {/* forcast table with collapsable daily timelapses */}
       </section>
       {/* </div> */}

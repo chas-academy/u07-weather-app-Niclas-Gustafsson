@@ -191,7 +191,7 @@ body #root .container .inner .heading {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-  max-width: 37.5em;
+  max-width: 28em;
   padding: 0.5em 1em;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
@@ -258,12 +258,14 @@ body #root .container .inner .heading {
       grid-template-areas: "day day" "date temp" "condition value";
   padding: 1em;
   width: 90%;
+  max-width: 28em;
   background: url("/src/assets/images/mountain.jpg") no-repeat center center/cover, radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.77);
   border-radius: 1em;
   -webkit-box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
   color: #ffffff;
   font-family: "Roboto", sans-serif;
+  z-index: 1;
 }
 
 .forecast-day::before {
@@ -351,6 +353,7 @@ body #root .container .inner .heading {
           justify-content: space-between;
   padding: 1em;
   width: 90%;
+  max-width: 28em;
   border-radius: 1em;
   -webkit-box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.5);
@@ -371,6 +374,8 @@ body #root .container .inner .heading {
 }
 
 .forecast-week .days img {
+  height: 2rem;
+  width: 2rem;
   margin: 0 auto;
 }
 
@@ -386,13 +391,13 @@ body #root .container .inner .heading {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
-  top: 50;
+  top: 0;
   left: 0%;
   height: 100%;
   width: 90%;
   padding: 2rem;
   background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
-  z-index: 2;
+  z-index: 3;
   /*  display: flex;
     justify-content: center;
     align-items: center; */
@@ -413,6 +418,39 @@ body #root .container .inner .heading {
 
 .sidebar p {
   color: #fff;
+}
+
+.hourly-forecast {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 90%;
+  padding: 1rem;
+  background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
+  z-index: 3;
+  /*  display: flex;
+    justify-content: center;
+    align-items: center; */
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+}
+
+.hourly-forecast.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.hourly-forecast .hourly {
+  width: 90%;
+  background: #ffffff7e;
+  border-radius: 1em;
+  padding: 1rem;
+  margin: 0 auto;
 }
 
 .table-btn {

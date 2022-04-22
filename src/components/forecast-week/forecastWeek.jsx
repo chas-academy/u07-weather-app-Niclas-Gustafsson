@@ -17,9 +17,8 @@ export default function ForecastWeek() {
         }
       }
       );
-
   },[]);
-  console.log(daily);
+  // console.log(daily);
   const options = {
     time: {
       hour: '2-digit',
@@ -40,10 +39,12 @@ export default function ForecastWeek() {
   };
 
   return (
+    <>
+    {daily[0] && 
     <section className="forecast-week">
       {/* A unique key for each sibling in the .map-loop was required. I gave it the "dt" property since it's unique for each sibling in this case. Exactly why it's required I don't know. */}
       {daily.map((day) => (
-        
+      
       <div className="mon days" key={day.dt}>
         <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} alt="Weather condition icon" />
        {/*  <img src={require("../../assets/images/clouds.png")} alt="" /> */}
@@ -52,5 +53,7 @@ export default function ForecastWeek() {
       </div>
       ))}
     </section>
+      }
+      </>
   )
 }

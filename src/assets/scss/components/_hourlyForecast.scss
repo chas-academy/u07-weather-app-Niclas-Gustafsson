@@ -1,28 +1,40 @@
-.sidebar {
-    box-sizing: border-box;
+
+.hourly-forecast {
     position: absolute;
     top: 0;
-    left: 0%;
-    height: 100%;
-    width: 90%;
-    padding: 2rem;
+    right: 0;
+    width: 100%;
+    height: 90%;
+    // z-index: 2;
+    padding: 1rem;
     background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(25, 178, 226, 0.9);
     z-index: 3;
    /*  display: flex;
     justify-content: center;
     align-items: center; */
-    opacity: 0;
+    // opacity: 0;
     transition: 0.4s ease-out;
-    transform: translateX(-100%);
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
+    transform: translateX(100%);
+    opacity: 0;
 
     &.open {
         transform: translateX(0);
         opacity: 1;
     }
 
-    p {
-        color: #fff;
+    .hourly {
+        width: 90%;
+        // height: 50px;
+        background: #ffffff7e;
+        border-radius: 1em;
+        padding: 1rem;
+        margin: 0 auto;
+        .overview {
+            
+
+        }
+        .details {
+
+        }
     }
 }

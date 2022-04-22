@@ -3,6 +3,7 @@
     justify-content: space-between;
     padding: 1em;
     width: 90%;
+    max-width: 28em;
     border-radius: 1em;
     box-shadow: $box-shadow;
     color: $white;
@@ -14,8 +15,8 @@
         flex-direction: column;
         gap: 0.4rem;
         img {
-            height: 20px;
-            width: 20px;
+            height: 2rem;
+            width: 2rem;
             margin: 0 auto;
         }
         p {

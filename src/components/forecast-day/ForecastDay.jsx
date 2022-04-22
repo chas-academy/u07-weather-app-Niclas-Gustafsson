@@ -43,7 +43,7 @@ export default function ForecastDay() {
           {weather.current &&
     <section className="forecast-day">
     
-      
+          
         <div className="day">
           <h2 className="day-text">{getDay(weather.current.dt, weather.timezone_offset).toLocaleDateString([], options.dateShort)}
           </h2>

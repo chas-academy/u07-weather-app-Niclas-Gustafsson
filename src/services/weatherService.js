@@ -1,7 +1,11 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
-import {  map, filter } from 'rxjs/operators'; 
+import {  map } from 'rxjs/operators'; 
 //https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
+
+//Hourly 4day forecast
+/* https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=35&lon=139&appid={API key} */
+
 export const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
 
