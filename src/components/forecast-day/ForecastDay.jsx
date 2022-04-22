@@ -26,10 +26,10 @@ export default function ForecastDay() {
       day: 'numeric'
     },
     
-    sun: {
+   /*  sun: {
       hour: '2-digit',
       minute: '2-digit'
-    }
+    } */
   };
 
  /*  useEffect(() => {
