@@ -13,7 +13,7 @@ function App() {
   const ref = useRef();
   /* const [showSidebar, setShowSidebar] = useState(false); */
   const [hourlyForecast, setHourlyForecast] = useState(false);
-  const [celcius, setCelcius] = useState(true);
+  const [celcius, setCelcius] = useState(false);
 
   useEffect(() => {
 

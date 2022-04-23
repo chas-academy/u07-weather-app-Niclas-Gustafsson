@@ -12,6 +12,7 @@
     "react-scripts": "5.0.1",
     "rxjs": "^7.5.5",
     "sass": "^1.50.0",
+    "serve": "^13.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

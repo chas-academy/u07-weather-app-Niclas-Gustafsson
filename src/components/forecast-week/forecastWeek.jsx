@@ -48,7 +48,7 @@ export default function ForecastWeek({ celcius }) {
        {/*  <img src={require("../../assets/images/clouds.png")} alt="" /> */}
         <p className="week-day">{getDay(day.dt, timezoneOffset).toLocaleDateString([], options.dateShort)}</p>
         {/* <p className="week-day-temp">{day.temp.max.toFixed()}°c / {day.temp.min.toFixed()}°c</p> */}
-        <p className="week-day-temp">{celcius ? tempConverter(day.temp.max, celcius).toFixed() : tempConverter(day.temp.max, celcius).toFixed()}°c / {celcius ? tempConverter(day.temp.min, celcius).toFixed() : tempConverter(day.temp.min, celcius).toFixed()}°c</p>
+        <p className="week-day-temp">{celcius ? tempConverter(day.temp.max, celcius).toFixed() : tempConverter(day.temp.max, celcius).toFixed()}° / {celcius ? tempConverter(day.temp.min, celcius).toFixed() : tempConverter(day.temp.min, celcius).toFixed()}°</p>
       </div>
       ))}
     </section>

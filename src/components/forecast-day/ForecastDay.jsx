@@ -47,7 +47,7 @@ export default function ForecastDay({ celcius }) {
           <p className="sunset">Sunset</p>
         </div>
         <div className="temp">
-            <h3 className="temp-text">{celcius ? tempConverter(weather.current.temp, celcius).toFixed() : tempConverter(weather.current.temp, celcius).toFixed()}°c</h3>
+            <h3 className="temp-text">{!celcius ? tempConverter(weather.current.temp, celcius).toFixed() : tempConverter(weather.current.temp, celcius).toFixed()}°</h3>
         </div>
         <div className="condition-values">
           <p className="hum-value">{weather.current.humidity}%</p>
