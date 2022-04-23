@@ -82,7 +82,6 @@ export default function HourlyForecast({ show, celcius }) {
                             <img src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`} alt="Weather condition icon" />
                             <p className="details-temp">{celcius ? tempConverter(hour.temp, celcius).toFixed() : tempConverter(hour.temp, celcius).toFixed()}°</p>
                             <p className="details-wind">{hour.wind_speed.toFixed()} m/s</p>
-                            {/* style={{ transform: rotate(hour.wind_deg)}} */}
                             <img className="direction" style={{ "--degrees": `${hour.wind_deg}deg` }} src={require('../../assets/images/direction.png')} alt="" />
                         </div>
                     ))}

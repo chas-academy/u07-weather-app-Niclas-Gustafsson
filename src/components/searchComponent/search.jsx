@@ -8,7 +8,6 @@ export default function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const geo = getWeatherByLocation(location);
-    console.log(geo);
     setLocation('');
   }
   return (

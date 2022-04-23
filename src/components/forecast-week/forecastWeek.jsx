@@ -18,7 +18,6 @@ export default function ForecastWeek({ celcius }) {
       }
       );
   },[]);
-  // console.log(daily);
   const options = {
     time: {
       hour: '2-digit',

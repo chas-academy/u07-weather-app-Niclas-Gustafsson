@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
-import {  map } from 'rxjs/operators'; 
+import { map } from 'rxjs/operators'; 
 
 export const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
@@ -38,7 +38,7 @@ async function getLocationWeather(coords) {
         const res = await axios.get(url)
         weather$.next(res.data);
     } catch (error) {
-        console.log('asd');
+        console.log(error);
     }
 }
 
@@ -56,7 +56,7 @@ export async function getWeatherByLocation(location) {
         const coords = `lat=${lat}&lon=${long}`;
         getLocationWeather(coords);
     } catch (error) {
-        console.log('error');
+        console.log(error);
     }
 }
 
