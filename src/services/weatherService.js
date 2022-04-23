@@ -4,8 +4,8 @@ import {  map } from 'rxjs/operators';
 
 export const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
-const baseGeoUrl = 'http://api.openweathermap.org/geo/1.0/direct?';
-const reversedGeoUrl = 'http://api.openweathermap.org/geo/1.0/reverse?';
+const baseGeoUrl = 'https://api.openweathermap.org/geo/1.0/direct?';
+const reversedGeoUrl = 'https://api.openweathermap.org/geo/1.0/reverse?';
 
 export const weather$ = new BehaviorSubject({});
 export const city$ = new BehaviorSubject('');
