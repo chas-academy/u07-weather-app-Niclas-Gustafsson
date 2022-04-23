@@ -59,5 +59,4 @@ As the image above, I wanted a navbar-like toggle. This was initially thought of
 
 <img src="./src/assets/images/Design/u07-hourly.png" alt="drawing" width="200"/>
 
-
 Though I discarded this idea for turning the assignment in, but kept the layout and put my "hourly display" in it instead. I had also forgot that I needed a Celcius/ Fahrenheit toggle so I turned the, now, not used button at the bottom to a temp converter.
