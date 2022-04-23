@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { dailyWeather$, locationOffset$} from '../../services/weatherService';
-import { getDay, getCity, getTime } from '../../helpers/helperFunctions';
+import { getDay, getCity, getTime, tempConverter } from '../../helpers/helperFunctions';
 
-export default function ForecastWeek() {
+export default function ForecastWeek({ celcius }) {
   const [daily, setDaily] = useState([]);
   const [timezoneOffset, setTimezoneOffset] = useState("");
 
@@ -49,7 +49,8 @@ export default function ForecastWeek() {
         <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} alt="Weather condition icon" />
        {/*  <img src={require("../../assets/images/clouds.png")} alt="" /> */}
         <p className="week-day">{getDay(day.dt, timezoneOffset).toLocaleDateString([], options.dateShort)}</p>
-        <p className="week-day-temp">{day.temp.max.toFixed()}°c / {day.temp.min.toFixed()}°c</p>
+        {/* <p className="week-day-temp">{day.temp.max.toFixed()}°c / {day.temp.min.toFixed()}°c</p> */}
+        <p className="week-day-temp">{celcius ? tempConverter(day.temp.max, celcius).toFixed() : tempConverter(day.temp.max, celcius).toFixed()}°c / {celcius ? tempConverter(day.temp.min, celcius).toFixed() : tempConverter(day.temp.min, celcius).toFixed()}°c</p>
       </div>
       ))}
     </section>

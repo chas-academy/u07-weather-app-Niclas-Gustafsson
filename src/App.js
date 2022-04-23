@@ -12,11 +12,12 @@ import HourlyForecast from './components/hourly-forecast/HourlyForecast';
 function App() {
 
   const ref = useRef();
-  const [showSidebar, setShowSidebar] = useState(false);
+  /* const [showSidebar, setShowSidebar] = useState(false); */
   const [hourlyForecast, setHourlyForecast] = useState(false);
+  const [celcius, setCelcius] = useState(true);
 
   useEffect(() => {
-    const closeSidebar = (e) => {
+    /* const closeSidebar = (e) => {
       if(showSidebar || hourlyForecast && ref.current && !ref.current.contains(e.target)) {
         // setShowSidebar(false);
         // setHourlyForecast(false);
@@ -27,39 +28,46 @@ function App() {
     return () => {
       // Cleanup the event listener
       document.removeEventListener("mousedown", closeSidebar)
-    }
-  }, [showSidebar, hourlyForecast]);
+    } */
+  }, [ hourlyForecast]); //showSidebar,
 
   const handleToggle = () => {
-    setShowSidebar((prevSidebarState) => !prevSidebarState);
+    // setShowSidebar((prevSidebarState) => !prevSidebarState);
+    setHourlyForecast((prevHourlyForecastState) => !prevHourlyForecastState);
     // console.log(showSidebar);
   }
-  const handleHourlyToggle = () => {
+  /* const handleHourlyToggle = () => {
     setHourlyForecast((prevHourlyForecastState) => !prevHourlyForecastState);
-    console.log(hourlyForecast);
+    // console.log(hourlyForecast);
+  } */
+
+  const handleCelcius = () => {
+    // setShowSidebar((prevSidebarState) => !prevSidebarState);
+    setCelcius((prevHourlyForecastState) => !prevHourlyForecastState);
+    console.log(celcius);
   }
 
   return (
     <div className="container">
       {/* navbar */}
-      <Navbar open={showSidebar} toggle={handleToggle} />
+      <Navbar open={hourlyForecast} toggle={handleToggle} />
       {/* <div className="div"> */}
       <section className="inner" >
         <h1 className="heading">WeapApp</h1>
         {/* Sidebar - visibly hidden on init */}
         {/* Sidebar */}
         <div ref={ref}>
-        <Sidebar show={showSidebar} /> 
-        <HourlyForecast show={hourlyForecast}/>
+        {/* <Sidebar show={showSidebar} />  */}
+        <HourlyForecast celcius={celcius}show={hourlyForecast}/>
         </div>
 
         <Search />
         {/* Forecast day */}
-        <ForecastDay />
+        <ForecastDay celcius={celcius}/>
         {/* Forecast week */}
-        <ForecastWeek />
+        <ForecastWeek celcius={celcius}/>
         {/* table button */}
-        <TableButton toggleHourly={handleHourlyToggle}/>
+        <TableButton celcius={celcius} toggle={handleCelcius}/> {/* toggleHourly={handleHourlyToggle} */}
         {/* forcast table with collapsable daily timelapses */}
       </section>
       {/* </div> */}

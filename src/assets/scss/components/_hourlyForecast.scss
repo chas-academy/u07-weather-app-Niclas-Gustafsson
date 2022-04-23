@@ -5,13 +5,15 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 90%;
     height: 95%;
     padding: 1rem;
-    background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(25, 178, 226, 0.9);
+    background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
     z-index: 3;
     transition: 0.4s ease-out;
     transform: translateX(100%);
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
     opacity: 0;
 
     &.open {
@@ -28,7 +30,6 @@
     .hourly {
         width: 90%;
         max-width: 25em;
-        // height: 400px;
         background: #ffffff56;
         border-radius: 1em;
         padding: 1rem;
@@ -37,7 +38,6 @@
         font-family: $robo;
         .overview {
             
-
             .day-date {
                 font-weight: 600;
                 margin-bottom: 0.3rem;
@@ -49,14 +49,12 @@
                 gap: 0.5rem;
                 margin-bottom: 0.5rem;
             }
-
         }
         /* Only shown when clicked */
 
         .details-wrapper {
             transition: 0.3s ease-in-out;
             height:0;
-            // display: hidden;
             .details {
                 opacity: 0;
                 min-height: 0;
@@ -70,16 +68,6 @@
                 transition-delay: 0.5s;
                 transition: 0.3s ease-in-out;
 
-                /* .details-hour {
-
-                }
-                .details-temp {
-
-                }
-                .details-feelslike {
-
-                } */
-
                 .direction {
                     width: 1.5rem;
                     transform: rotate(var(--degrees));
@@ -88,19 +76,16 @@
                 &.open {
                     max-height: 2rem;
                     opacity: 1;
-                    
                 }
             }
 
             &.open {
                 height:370px;
-                // display: block;
             }
         }
         .more-details {
             color: $white;
             text-align: center;
-
         }
 
         &:hover {

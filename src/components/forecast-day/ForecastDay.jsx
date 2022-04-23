@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { weather$, city$, getLocation } from '../../services/weatherService';
-import { getDay, getCity, getTime } from '../../helpers/helperFunctions';
+import { getDay, getCity, getTime, tempConverter } from '../../helpers/helperFunctions';
 
-export default function ForecastDay() {
+export default function ForecastDay({ celcius }) {
 
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState('');
@@ -53,7 +53,7 @@ export default function ForecastDay() {
         </div>
         <div className="date-place">
           <p className="date">{getDay(weather.current.dt, weather.timezone_offset).toLocaleDateString([], options.dateLong)}</p>
-          <p className="place">{getCity(weather.timezone)}</p>
+          <p className="place">{city}</p>
         </div>
         <div className="conditions">
           <p className="humidity">Humidity</p>
@@ -62,7 +62,7 @@ export default function ForecastDay() {
           <p className="sunset">Sunset</p>
         </div>
         <div className="temp">
-            <h3 className="temp-text">{weather.current.temp.toFixed()}°c</h3>
+            <h3 className="temp-text">{celcius ? tempConverter(weather.current.temp, celcius).toFixed() : tempConverter(weather.current.temp, celcius).toFixed()}°c</h3>
         </div>
         <div className="condition-values">
           <p className="hum-value">{weather.current.humidity}%</p>

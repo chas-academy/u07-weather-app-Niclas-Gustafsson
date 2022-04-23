@@ -388,7 +388,7 @@ body #root .container .inner .heading {
 }
 
 .forecast-week .days .week-day-temp {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .sidebar {
@@ -432,7 +432,7 @@ body #root .container .inner .heading {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 90%;
   height: 95%;
   padding: 1rem;
   background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
@@ -441,6 +441,8 @@ body #root .container .inner .heading {
   transition: 0.4s ease-out;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
   opacity: 0;
 }
 
@@ -515,15 +517,6 @@ body #root .container .inner .heading {
           transition-delay: 0.5s;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  /* .details-hour {
-
-                }
-                .details-temp {
-
-                }
-                .details-feelslike {
-
-                } */
 }
 
 .hourly-forecast .hourly .details-wrapper .details .direction {

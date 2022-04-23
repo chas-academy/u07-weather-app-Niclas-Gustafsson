@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { weather$, locationOffset$} from '../../services/weatherService';
-import { getDay, getCity, getTime } from '../../helpers/helperFunctions';
+import { getDay, getTime, tempConverter } from '../../helpers/helperFunctions';
 // import { ObjectUnsubscribedError } from 'rxjs';
 
-export default function HourlyForecast({ show }) {
+export default function HourlyForecast({ show, celcius }) {
 
     const [details, setDetails] = useState(false);
     const [hourly, setHourly] = useState([]);
@@ -80,14 +80,6 @@ export default function HourlyForecast({ show }) {
                 <p className="day-date">{getDay(current.dt, timezoneOffset).toLocaleDateString([], options.full)}</p>
                 <div className="hourly-info">
                     <p className="hour">{getTime(current.dt, timezoneOffset).toLocaleTimeString([], options.time)}</p>
-
-                    {/* {current && 
-                    <>
-                    <img src={`https://openweathermap.org/img/wn/${current.weather[0].icon}.png`} alt="Weather condition icon" />
-                    <p className="temp">{current.temp.toFixed()}°</p>
-                    </>
-                    } */}
-
                 </div>
             </div>
             <div className={`details-wrapper ${details ? "open" : ''}`}>
@@ -99,7 +91,7 @@ export default function HourlyForecast({ show }) {
                         <div className={`details ${details ? "open" : ''}`} key={hour.dt}>
                             <p className="details-hour">{getTime(hour.dt, timezoneOffset).toLocaleTimeString([], options.time)}</p>
                             <img src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`} alt="Weather condition icon" />
-                            <p className="details-temp">{hour.temp.toFixed()}°</p>
+                            <p className="details-temp">{celcius ? tempConverter(hour.temp, celcius).toFixed() : tempConverter(hour.temp, celcius).toFixed()}°</p>
                             <p className="details-wind">{hour.wind_speed.toFixed()} m/s</p>
                             {/* style={{ transform: rotate(hour.wind_deg)}} */}
                             <img className="direction" style={{ "--degrees": `${hour.wind_deg}deg` }} src={require('../../assets/images/direction.png')} alt="" />
