@@ -25,7 +25,6 @@ function App() {
 
   const handleCelcius = () => {
     setCelcius((prevHourlyForecastState) => !prevHourlyForecastState);
-    console.log(celcius);
   }
 
   return (
