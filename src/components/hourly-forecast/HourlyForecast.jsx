@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { weather$, locationOffset$} from '../../services/weatherService';
 import { getDay, getCity, getTime } from '../../helpers/helperFunctions';
+// import { ObjectUnsubscribedError } from 'rxjs';
 
 export default function HourlyForecast({ show }) {
 
@@ -10,11 +11,12 @@ export default function HourlyForecast({ show }) {
     const [current, setCurrent] = useState({});
 
     useEffect(() => {
+        
 
         weather$.subscribe(data => {
             if (data.hourly) {
                 // console.log(data.hourly);
-               let test = []
+                let test = []
 
                 data.hourly.map((item, index) => {
                     if(index % 3 === 0 && test.length <9 ) {
@@ -27,13 +29,18 @@ export default function HourlyForecast({ show }) {
 
             if(data.current) {
                 setCurrent(data.current);
+                // console.log(current);
             }
         })
+        
         locationOffset$.subscribe(offset => {
             setTimezoneOffset(offset);
         });
+        
+
+        
     }, []) 
-    console.log(current);
+    // console.log(current);
     const options = {
         time: {
           hour: '2-digit',
@@ -73,8 +80,14 @@ export default function HourlyForecast({ show }) {
                 <p className="day-date">{getDay(current.dt, timezoneOffset).toLocaleDateString([], options.full)}</p>
                 <div className="hourly-info">
                     <p className="hour">{getTime(current.dt, timezoneOffset).toLocaleTimeString([], options.time)}</p>
+
+                    {/* {current && 
+                    <>
                     <img src={`https://openweathermap.org/img/wn/${current.weather[0].icon}.png`} alt="Weather condition icon" />
                     <p className="temp">{current.temp.toFixed()}°</p>
+                    </>
+                    } */}
+
                 </div>
             </div>
             <div className={`details-wrapper ${details ? "open" : ''}`}>

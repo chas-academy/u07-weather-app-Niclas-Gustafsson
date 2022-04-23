@@ -32,7 +32,7 @@ function App() {
 
   const handleToggle = () => {
     setShowSidebar((prevSidebarState) => !prevSidebarState);
-    console.log(showSidebar);
+    // console.log(showSidebar);
   }
   const handleHourlyToggle = () => {
     setHourlyForecast((prevHourlyForecastState) => !prevHourlyForecastState);

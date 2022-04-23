@@ -383,6 +383,10 @@ body #root .container .inner .heading {
   text-align: center;
 }
 
+.forecast-week .days .week-day {
+  font-size: 0.9rem;
+}
+
 .forecast-week .days .week-day-temp {
   font-size: 0.8rem;
 }

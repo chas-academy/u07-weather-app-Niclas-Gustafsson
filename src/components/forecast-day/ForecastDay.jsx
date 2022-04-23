@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from 'react'
-import { weather$, getLocation } from '../../services/weatherService';
+import { weather$, city$, getLocation } from '../../services/weatherService';
 import { getDay, getCity, getTime } from '../../helpers/helperFunctions';
 
 export default function ForecastDay() {
 
   const [weather, setWeather] = useState({});
+  const [city, setCity] = useState('');
 
   useEffect(() => {
     getLocation();
-    weather$.subscribe(data => setWeather(data))
+    weather$.subscribe(data => setWeather(data));
+    city$.subscribe(cityName => setCity(cityName));
   }, [])
-
+  // console.log(city);
   // console.log(weather);
 
   const options = {
@@ -45,7 +47,7 @@ export default function ForecastDay() {
     
           
         <div className="day">
-          <h2 className="day-text">{getDay(weather.current.dt, weather.timezone_offset).toLocaleDateString([], options.dateShort)}
+          <h2 className="day-text">{city}
           </h2>
           
         </div>
