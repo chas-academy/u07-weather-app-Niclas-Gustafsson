@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { weather$, locationOffset$} from '../../services/weatherService';
 import { getDay, getTime, tempConverter } from '../../helpers/helperFunctions';
-// import { ObjectUnsubscribedError } from 'rxjs';
 
 export default function HourlyForecast({ show, celcius }) {
 
@@ -11,36 +10,27 @@ export default function HourlyForecast({ show, celcius }) {
     const [current, setCurrent] = useState({});
 
     useEffect(() => {
-        
-
         weather$.subscribe(data => {
             if (data.hourly) {
-                // console.log(data.hourly);
                 let test = []
-
                 data.hourly.map((item, index) => {
                     if(index % 3 === 0 && test.length <9 ) {
                         test.push(item)
                     }
                 })
-                // console.log(test);
                 setHourly(test);
             }
 
             if(data.current) {
                 setCurrent(data.current);
-                // console.log(current);
             }
         })
         
         locationOffset$.subscribe(offset => {
             setTimezoneOffset(offset);
         });
-        
-
-        
     }, []) 
-    // console.log(current);
+
     const options = {
         time: {
           hour: '2-digit',
@@ -68,7 +58,6 @@ export default function HourlyForecast({ show, celcius }) {
 
     const handleToggle = () => {
         setDetails((prevDetailsState) => !prevDetailsState);
-        // console.log(details);
       }
 
   return (
@@ -97,35 +86,11 @@ export default function HourlyForecast({ show, celcius }) {
                             <img className="direction" style={{ "--degrees": `${hour.wind_deg}deg` }} src={require('../../assets/images/direction.png')} alt="" />
                         </div>
                     ))}
-                    
-                   
                     </>    
-                    }
-
-                    
-                
-
-                {/* <div className="details">
-                        <p className="details-hour">10am</p>
-                        <img src={require('../../assets/images/clouds.png')} alt="" />
-                        <p className="details-temp">13°</p>
-                        <p className="details-wind">5 m/s</p>
-                        arrow to change angle depending
-                        <img className="direction" src={require('../../assets/images/direction.png')} alt="" />
-                </div>
-                <div className="details">
-                        <p className="details-hour">10am</p>
-                        <img src={require('../../assets/images/clouds.png')} alt="" />
-                        <p className="details-temp">13°</p>
-                        <p className="details-wind">5 m/s</p>
-                        
-                        <img className="direction" src={require('../../assets/images/direction.png')} alt="" />
-                </div> */}
+                }
             </div>
-
-
-            {/* change to "less info if the details div is visible" */}
-            <p className="more-details">More details</p>
+            
+            <p className="more-details">{details ? 'Less info' : 'More info'}</p>
         </div>
 
     </section>

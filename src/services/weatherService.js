@@ -1,10 +1,6 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
 import {  map } from 'rxjs/operators'; 
-//https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
-
-//Hourly 4day forecast
-/* https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=35&lon=139&appid={API key} */
 
 export const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
@@ -55,19 +51,16 @@ export async function getWeatherByLocation(location) {
         console.log(res.data[0]);
         let lat = res.data[0].lat;
         let long = res.data[0].lon;
+
         city$.next(res.data[0].name);
-        // console.log(lat, long, cityName);
         const coords = `lat=${lat}&lon=${long}`;
         getLocationWeather(coords);
     } catch (error) {
         console.log('error');
     }
-
-
-
-
 }
-//Get weather by search
+
+//Get city name
 async function setCityName(url) {
     try {
 
@@ -77,6 +70,3 @@ async function setCityName(url) {
         console.log(error);
     }
 }
-
-
-//Get weather by specific units Celsius and Fahrenheit.

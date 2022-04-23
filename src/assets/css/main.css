@@ -431,7 +431,7 @@ body #root .container .inner .heading {
 .hourly-forecast {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 90%;
   height: 95%;
   padding: 1rem;
@@ -439,8 +439,8 @@ body #root .container .inner .heading {
   z-index: 3;
   -webkit-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
   border-bottom-right-radius: 1em;
   border-top-right-radius: 1em;
   opacity: 0;

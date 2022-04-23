@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { dailyWeather$, locationOffset$} from '../../services/weatherService';
-import { getDay, getCity, getTime, tempConverter } from '../../helpers/helperFunctions';
+import { getDay, tempConverter } from '../../helpers/helperFunctions';
 
 export default function ForecastWeek({ celcius }) {
   const [daily, setDaily] = useState([]);
@@ -42,7 +42,6 @@ export default function ForecastWeek({ celcius }) {
     <>
     {daily[0] && 
     <section className="forecast-week">
-      {/* A unique key for each sibling in the .map-loop was required. I gave it the "dt" property since it's unique for each sibling in this case. Exactly why it's required I don't know. */}
       {daily.map((day) => (
       
       <div className="mon days" key={day.dt}>

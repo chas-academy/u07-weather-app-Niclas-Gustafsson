@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { weather$, city$, getLocation } from '../../services/weatherService';
-import { getDay, getCity, getTime, tempConverter } from '../../helpers/helperFunctions';
+import { getDay, getTime, tempConverter } from '../../helpers/helperFunctions';
 
 export default function ForecastDay({ celcius }) {
 
@@ -12,8 +12,6 @@ export default function ForecastDay({ celcius }) {
     weather$.subscribe(data => setWeather(data));
     city$.subscribe(cityName => setCity(cityName));
   }, [])
-  // console.log(city);
-  // console.log(weather);
 
   const options = {
     time: {
@@ -26,26 +24,13 @@ export default function ForecastDay({ celcius }) {
     dateLong: {
       month: 'long',
       day: 'numeric'
-    },
-    
-   /*  sun: {
-      hour: '2-digit',
-      minute: '2-digit'
-    } */
+    }
   };
-
- /*  useEffect(() => {
-    getLocation();
-    weather$.subscribe(data => setWeather(data))
-  }, [])
-  console.log(weather); */
 
   return (
     <>
-          {weather.current &&
+    {weather.current &&
     <section className="forecast-day">
-    
-          
         <div className="day">
           <h2 className="day-text">{city}
           </h2>
@@ -67,15 +52,9 @@ export default function ForecastDay({ celcius }) {
         <div className="condition-values">
           <p className="hum-value">{weather.current.humidity}%</p>
           <p className="wind-value">{weather.current.wind_speed} m/s</p>
-         
-
           <p className="sunrise-value">{getTime(weather.current.sunrise, weather.timezone_offset).toLocaleTimeString([], options.time)} am</p>
           <p className="sunset-value">{getTime(weather.current.sunset, weather.timezone_offset).toLocaleTimeString([], options.time)} pm</p>
         </div>
-     {/*  </section> */}
-      {/* <section className="inner-right">
-
-      </section> */}
       
     </section>
     }

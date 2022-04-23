@@ -10,7 +10,6 @@ export default function Search() {
     const geo = getWeatherByLocation(location);
     console.log(geo);
     setLocation('');
-    //call function getting coords with city name
   }
   return (
     <section className="search-box">

@@ -4,14 +4,14 @@
 .hourly-forecast {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 90%;
     height: 95%;
     padding: 1rem;
     background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
     z-index: 3;
     transition: 0.4s ease-out;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     border-bottom-right-radius: 1em;
     border-top-right-radius: 1em;
     opacity: 0;
