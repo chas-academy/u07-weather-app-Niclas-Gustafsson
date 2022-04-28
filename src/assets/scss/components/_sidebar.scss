@@ -6,11 +6,8 @@
     height: 100%;
     width: 90%;
     padding: 2rem;
-    background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(25, 178, 226, 0.9);
+    background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
     z-index: 3;
-   /*  display: flex;
-    justify-content: center;
-    align-items: center; */
     opacity: 0;
     transition: 0.4s ease-out;
     transform: translateX(-100%);

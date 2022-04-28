@@ -51,9 +51,7 @@ input {
 
 body {
   width: 100%;
-  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  width: 100%;
   height: 100%;
 }
 
@@ -66,6 +64,7 @@ body::before {
   top: 0;
   left: 0;
   z-index: -1;
+  overflow-y: hidden;
 }
 
 body::after {
@@ -217,11 +216,6 @@ body #root .container .inner .heading {
           align-items: center;
   padding: 1em;
   width: 80%;
-  /* input, label {
-            display: block;
-            margin: 0.5em;
-
-        } */
 }
 
 .search-box .search-form input {
@@ -402,9 +396,6 @@ body #root .container .inner .heading {
   padding: 2rem;
   background: radial-gradient(169.33% 169.33% at -8.09% -32.56%, rgba(255, 220, 220, 0) 24.88%, rgba(3, 23, 46, 0.356) 87.1%), rgba(25, 178, 226, 0.9);
   z-index: 3;
-  /*  display: flex;
-    justify-content: center;
-    align-items: center; */
   opacity: 0;
   -webkit-transition: 0.4s ease-out;
   transition: 0.4s ease-out;

@@ -3,11 +3,10 @@ import { getWeatherByLocation } from '../../services/weatherService';
 
 export default function Search() {
   const [location, setLocation] = useState('');
-  // console.log(location);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const geo = getWeatherByLocation(location);
+    getWeatherByLocation(location);
     setLocation('');
   }
   return (

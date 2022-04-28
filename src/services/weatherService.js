@@ -17,7 +17,6 @@ export const dailyWeather$ = weather$.pipe(map((res) => {
      return res.daily;
 }));
 
-//Get location
 // gets called on mount
 export async function getLocation() {
     if(navigator.geolocation) {

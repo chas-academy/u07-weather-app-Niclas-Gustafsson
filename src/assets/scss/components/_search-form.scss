@@ -6,8 +6,6 @@
         width: 90%;
         max-width: 28em;
         padding: 0.5em 1em;
-        //height: 200px; // refactor to relative
-        // background-color: #fff;
         margin: 0 auto;
         font-family: $robo;
         background: $box-gradient;
@@ -21,15 +19,8 @@
         align-items: center;
         padding: 1em;
         width: 80%;
-        // max-width: 30em;
-        /* input, label {
-            display: block;
-            margin: 0.5em;
-
-        } */
        
         input {
-            // display: block;
             width: 100%;
             max-width: 22em;
             height: 2.5em;

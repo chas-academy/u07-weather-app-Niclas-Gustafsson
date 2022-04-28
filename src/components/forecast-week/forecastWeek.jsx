@@ -45,9 +45,7 @@ export default function ForecastWeek({ celcius }) {
       
       <div className="mon days" key={day.dt}>
         <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} alt="Weather condition icon" />
-       {/*  <img src={require("../../assets/images/clouds.png")} alt="" /> */}
         <p className="week-day">{getDay(day.dt, timezoneOffset).toLocaleDateString([], options.dateShort)}</p>
-        {/* <p className="week-day-temp">{day.temp.max.toFixed()}°c / {day.temp.min.toFixed()}°c</p> */}
         <p className="week-day-temp">{celcius ? tempConverter(day.temp.max, celcius).toFixed() : tempConverter(day.temp.max, celcius).toFixed()}° / {celcius ? tempConverter(day.temp.min, celcius).toFixed() : tempConverter(day.temp.min, celcius).toFixed()}°</p>
       </div>
       ))}
